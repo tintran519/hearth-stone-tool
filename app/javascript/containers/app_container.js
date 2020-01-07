@@ -1,19 +1,24 @@
 import React                              from 'react';
 import ReactDOM                           from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect }                        from 'react-redux';
+
+const mapDispatchToProps = dispatch => {
+  return {
+  };
+}
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+  };
+}
 
 class AppContainer extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {};
-  }
-
   render () {
     return (
-      <div>App Container</div>
+      <div>Heathstone App Container</div>
     )
   }
 }
 
-export default AppContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer)
