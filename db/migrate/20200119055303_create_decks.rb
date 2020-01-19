@@ -4,6 +4,7 @@ class CreateDecks < ActiveRecord::Migration[6.0]
       t.string :name, null: false, default: ""
 
       t.timestamps
+      t.references :user, foreign_key: true
     end
   end
 end
