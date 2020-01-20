@@ -1,15 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Seeding files..."
 
-user = User.create(
+user_blah = User.create(
   email: 'blah@blah.com',
   password: 'blahblah',
   password_confirmation:'blahblah'
 )
 
-deck = Deck.create(name:'Tempo Rogue')
+tempo_rogue_deck = Deck.create(
+  name:'Tempo Rogue',
+  user_id: user_blah.id
+)
+
+heistbaron_card = Card.create(
+  name: 'Heistbaron Togwaggle',
+  description: 'A staunch ally of Rafaam, at least while the shinies keep flowing',
+  mana_cost: 6,
+  crafting_cost: 1600,
+  rarity: 'Legendary',
+  card_type: 'Minion',
+  set: 'Rise of Shadows',
+  attack: 5,
+  health: 5,
+  effect_type: 'Battlecry',
+  effect: 'If you control a Lackey, choose a fantastic treasure.'
+)
+
+puts "Seed Complete"

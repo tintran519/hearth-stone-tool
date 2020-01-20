@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_19_055751) do
+ActiveRecord::Schema.define(version: 2020_01_19_082744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,19 @@ ActiveRecord::Schema.define(version: 2020_01_19_055751) do
     t.integer "mana_cost", default: 0, null: false
     t.integer "crafting_cost", default: 0, null: false
     t.string "rarity", default: "", null: false
-    t.string "type", default: "", null: false
+    t.string "card_type", default: "", null: false
     t.string "set", default: "", null: false
+    t.integer "attack"
+    t.integer "health"
+    t.string "effect", default: "", null: false
+    t.string "effect_type", default: "", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "deck_cards", force: :cascade do |t|
+    t.integer "deck_id", null: false
+    t.integer "card_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
